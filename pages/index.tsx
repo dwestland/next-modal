@@ -2,6 +2,7 @@
 /* eslint-disable import/no-unresolved */
 import React, { useState } from 'react'
 import Modal from '../components/Modal'
+import MyCustomModal from '../components/MyCustomModal'
 import styles from '../styles/Home.module.css'
 
 /**
@@ -20,11 +21,18 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <h1>Home</h1>
+
       <button type="button" className="btn" onClick={handleModal}>
         Open Modal
       </button>
 
-      <Modal show={showModal} onClose={() => setShowModal(false)} />
+      <Modal
+        title="My Title"
+        show={showModal}
+        onClose={() => setShowModal(false)}
+      >
+        <MyCustomModal />
+      </Modal>
     </div>
   )
 }
